@@ -1,78 +1,98 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 
 <head>
   <meta charset="utf-8">
-  <title>Hello World!</title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Layout Task</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-  <h1>HTML Rocks!</h1>
-  <p>
-    <button  onclick="helloWorld()">Prints Hello World to the Developer console</button>
-  </p>
-  <hr>
-  <form id="addForm">
-    <label for="num1">Number 1:</label>
-    <input type="number" id="num1" name="num1" required>
-    <br>
-    <label for="num2">Number 2:</label>
-    <input type="number" id="num2" name="num2" required>
-    <br>
-    <button type="submit">Add Numbers</button>
-  </form>
 
-  <label id="result">Result:</label>
+  <div class="logo">
+    My exciting website!
+  </div>
 
-  <hr>
+  <nav>
+    <ul>
+      <li>
+        <a href="">Home</a>
+      </li>
+      <li>
+        <a href="">Blog</a>
+      </li>
+      <li>
+        <a href="">About us</a>
+      </li>
+      <li>
+        <a href="">Our history</a>
+      </li>
+      <li>
+        <a href="">Contacts</a>
+      </li>
+    </ul>
+  </nav>
 
-  <button id="jokeButton">Get a Random Joke</button>
-  <p id="joke"></p>
+  <main class="grid">
+    <article>
+      <h1>
+        An Exciting Blog Post
+      </h1>
+      <img src="img/balloon-sq6.jpg" alt="placeholder" class="feature">
+      <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo
+        melon
+        azuki bean garlic.</p>
 
-  <script type="module" script="js/main.js">
-    import {helloWorld, add, fetchRandomJoke} from './js/main.js';
+      <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard
+        greens
+        dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
 
-    // This shows how to assign a function to the window object
-    // so that it can be called from the browser console
-    window.helloWorld = helloWorld;
+      <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado
+        daikon
+        napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot
+        soko.
+        Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea
+        gram
+        corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress.
+        Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
 
-    // This shows how to add an event listener to a button in the HTML
-    // and call a function when the button is clicked
-    const form = document.getElementById('addForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const num1 = parseFloat(document.getElementById('num1').value);
-      const num2 = parseFloat(document.getElementById('num2').value);
-      try{
-        const result = add(num1, num2);
-        document.getElementById('result').textContent = `Result: ${result}`;
-      }catch(e){
-        console.error(e);
-        document.getElementById('result').textContent = `Error: ${e.message}`;
-      }
+      <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea
+        prairie
+        turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel
+        azuki
+        bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.</p>
 
-    });
+      <p>Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf
+        wattle
+        seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout chard.</p>
 
-    // this shows how to add an event listener to a button in the HTML
-    // that calls a function that fetches a random joke from an API
-    // and displays it on the page
-    const jokebtn = document.getElementById('jokeButton');
-    const jokeresult = document.getElementById('joke');
-    jokebtn.addEventListener('click', async () => {
-      try {
-        jokeresult.textContent = 'Loading...';
-        const joke = await fetchRandomJoke();
-        document.getElementById('joke').textContent = joke;
-      } catch (e) {
-        console.error(e);
-        document.getElementById('joke').textContent = `Error: ${e.message}`;
-      }
-    });
-  </script>
+    </article>
+
+    <aside>
+      <h2>
+        Photography
+      </h2>
+      <ul class="photos">
+        <li>
+          <img src="img/balloon-sq1.jpg" alt="placeholder">
+        </li>
+        <li>
+          <img src="img/balloon-sq2.jpg" alt="placeholder">
+        </li>
+        <li>
+          <img src="img/balloon-sq3.jpg" alt="placeholder">
+        </li>
+        <li>
+          <img src="img/balloon-sq4.jpg" alt="placeholder">
+        </li>
+        <li>
+          <img src="img/balloon-sq5.jpg" alt="placeholder">
+        </li>
+      </ul>
+
+    </aside>
+  </main>
 
 </body>
 
