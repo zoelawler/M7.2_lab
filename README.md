@@ -1,7 +1,7 @@
 # Simple Webpage
 
 This is a project that uses some additional CSS to help design the webpage in
-a better way.
+a better way
 
 ## Getting Started
 
